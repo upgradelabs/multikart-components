@@ -1,0 +1,66 @@
+{
+    "name": "upgrade-agency/multikart-components",
+    "description": "Laravel Blade Components for Multikart Template",
+    "keywords": [
+        "upgrade-agency",
+        "laravel",
+        "multikart-components"
+    ],
+    "homepage": "https://github.com/upgrade-agency/multikart-components",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Upgrade Agency Portugal",
+            "email": "ricardo.simao@upgrade.pt",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "spatie/laravel-package-tools": "^1.9.2",
+        "illuminate/contracts": "^9.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^6.0",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Upgrade\\MultikartComponents\\": "src",
+            "Upgrade\\MultikartComponents\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Upgrade\\MultikartComponents\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Upgrade\\MultikartComponents\\MultikartComponentsServiceProvider"
+            ],
+            "aliases": {
+                "MultikartComponents": "Upgrade\\MultikartComponents\\Facades\\MultikartComponents"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
